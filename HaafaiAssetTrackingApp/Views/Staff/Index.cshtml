@@ -1,0 +1,37 @@
+﻿@model List<Staff>
+<div class="table-responsive">
+	<div class="card">
+	<div class="card-body">
+
+			<div class="container">
+				<div class="row pt-0">
+					<div class="col-3">
+						<h2>Staff Members</h2>
+					</div>
+				</div>
+			</div>
+		
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>StaffId</th>
+				<th>NICNO</th>
+				<th>Name</th>
+				<th>Department</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var staff in Model)
+			{
+			<tr onclick="location.href = '@(Url.Action("StaffIndex", "Staff", new { StaffId = staff.StaffId }))'">
+				<td>@staff.StaffId</td>
+				<td>@staff.NicNo</td>
+				<td>@staff.Name</td>
+				<td>@staff.Department</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+		</div>
+		</div>
+</div>

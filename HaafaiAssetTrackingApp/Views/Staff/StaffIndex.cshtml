@@ -1,0 +1,95 @@
+﻿@using HaafaiAssetTrackingApp.Models.ViewModels
+
+@model StaffAssetViewModel
+
+<h1>Staff Information</h1>
+
+<div class="card">
+	<div class="card-body">
+		<h2 class="card-title">@Model.staff.Name</h2>
+
+		<p class="card-text"><strong>Staff ID:</strong> @Model.staff.StaffId</p>  
+
+		<p class="card-text"><strong>NIC Number:</strong> @Model.staff.NicNo</p>
+
+
+		<p class="card-text"><strong>Department:</strong> @Model.staff.Department</p>
+
+
+		<h3 >Assets Currently Assigned to this staff Member:</h3>
+
+		@if (Model.assets.Count > 0)
+		{
+			<table class="table table-striped table-hover">
+
+				<thead>
+					<tr>
+						<th>Asset No</th>
+						<th>Asset Type</th>
+						<th>Asset Status</th>
+						<th>Purchased Date</th>
+						<th>Assigned Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var asset in Model.assets)
+					{
+						<tr>
+							<td>@asset.AssetNo</td>
+							<td>@asset.AssetType</td>
+							<td>@asset.AssetStatus</td>
+							<td>@asset.PurchasedDate</td>
+							<td>@asset.AssignedDate</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<p>No Assets currently owned by this staff member</p>
+		}
+		
+
+
+		<h3>History of assigned assets to this staff Member:</h3>
+
+		@if (Model.staffHistories.Count > 0)
+		{
+			<table class="table table-striped table-hover">
+
+				<thead>
+					<tr>
+						<th>Asset No</th>
+						<th>Asset Type</th>
+						<th>Assigned Date</th>
+						<th>Last Returned Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var asset in Model.staffHistories)
+					{
+						<tr>
+							<td>@asset.AssetNo</td>
+							<td>@asset.AssetType</td>
+							<td>@asset.AssignedDate</td>
+							<td>@asset.LastReturnedDate</td>
+						</tr>
+					}
+
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<p>No Assets previously or currently owned by this staff member</p>
+		}
+
+		<div>
+			<a href="@Url.Action("Index", "Staff")" class="btn btn-primary">Back to Staff List</a>
+		</div>
+    
+
+    </div>
+	
+</div>

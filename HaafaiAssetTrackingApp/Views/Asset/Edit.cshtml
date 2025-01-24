@@ -1,0 +1,82 @@
+﻿@using HaafaiAssetTrackingApp.Models.ViewModels;
+
+@model AssetStaffFormViewModel;
+
+
+<div class="table-responsive">
+
+	<div class="card">
+
+		<div class="container mt-4">
+
+			<div class="col-md-8 offset-md-2">
+
+				<div class=" card-header bg-primary text-white">
+					<h2>Edit Asset</h2>
+				</div>
+				<div class="card-body">
+					<form asp-action="Edit" method="post">
+						<div class=" form-group mb-3">
+							<label asp-for="AssetType"  class="form-label">Asset Type</label>
+							<select class="form-control" id="AssetType" name="AssetType">
+								<option value="@Model.AssetType">@Model.AssetType</option>
+								@foreach (var Type in Model.type)
+								{
+									<option value="@Type.Text">@Type.Text</option>
+								}
+							</select>
+						</div>
+
+						<div class=" form-group mb-3">
+							<label asp-for="AssetStatus" class="form-label">Asset Status</label>
+							<select class="form-control" id="AssetStatus" name="AssetStatus">
+								<option value="@Model.AssetStatus">@Model.AssetStatus</option>
+								@foreach (var status in Model.status)
+								{
+									<option value="@status.Text">@status.Text</option>
+								}
+							</select>
+						</div>
+
+						<div class=" form-group mb-3">
+							<label asp-for="PurchasedDate" class="form-label">Purchased Date</label>
+							<input asp-for="PurchasedDate" class="form-control" type="date" placeholder="@Model.PurchasedDate"/>
+						</div>
+
+						<div class=" form-group mb-3">
+							<label asp-for="DiscardedDate" class="form-label">Discarded Date</label>
+							<input asp-for="DiscardedDate" class="form-control" type="date" placeholder="@Model.DiscardedDate" />
+						</div>
+
+						<div class=" form-group mb-3">
+							<label asp-for="staffId" class="form-label">Staff ID</label>
+							<input asp-for="staffId" class="form-control" type="number" placeholder="@Model.staffId" />
+						</div>
+
+						<div class=" form-group mb-3">
+							<label asp-for="AssignedDate" class="form-label">Assigned Date</label>
+							<input asp-for="AssignedDate" class="form-control" type="date" placeholder="@Model.AssignedDate" />
+						</div>
+
+						<div class=" form-group mb-3">
+							<label asp-for="LastReturnedDate" class="form-label">Last Returned Date</label>
+							<input asp-for="LastReturnedDate" class="form-control" type="date" placeholder="@Model.LastReturnedDate" />
+						</div>
+
+						<button class="btn btn-primary" type="submit">Edit</button>
+
+					</form>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+
+	</div>
+
+</div>

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HaafaiAssetTrackingApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250124172736_SetUpDatabase")]
+    [Migration("20250124184204_SetUpDatabase")]
     partial class SetUpDatabase
     {
         /// <inheritdoc />
@@ -79,6 +79,14 @@ namespace HaafaiAssetTrackingApp.Migrations
                             AssetStatus = "Not Assigned",
                             AssetType = "CPU",
                             LastReturnedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PurchasedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            AssetNo = 3,
+                            AssetStatus = "Discarded",
+                            AssetType = "Keyboard",
+                            DiscardedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PurchasedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -173,6 +181,14 @@ namespace HaafaiAssetTrackingApp.Migrations
                             AssignedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LastReturnedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             staffId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AssetNo = 2,
+                            AssignedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastReturnedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            staffId = 2
                         });
                 });
 

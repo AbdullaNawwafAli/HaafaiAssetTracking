@@ -27,12 +27,15 @@ namespace HaafaiAssetTrackingApp.Controllers.Data
                 new Asset { AssetNo = 1, AssetType = "Monitor", AssetStatus = "Assigned", PurchasedDate = new DateTime(2023, 1, 3), staffId = 1, AssignedDate = new DateTime(2023, 1, 4), LastReturnedDate = new DateTime(2023, 1, 5) }
                 ,
                 new Asset { AssetNo = 2, AssetType = "CPU", AssetStatus = "Not Assigned", PurchasedDate = new DateTime(2023, 1, 3), staffId = null, LastReturnedDate = new DateTime(2023, 1, 4) }
+                ,
+                new Asset { AssetNo = 3, AssetType = "Keyboard", AssetStatus = "Discarded", PurchasedDate = new DateTime(2023, 1, 3), DiscardedDate = new DateTime(2023, 1, 4),  staffId = null, }
 
                 );
 
             modelBuilder.Entity<StaffAssetHistory>().HasData(
                 new StaffAssetHistory { Id = 1, staffId = 1, AssetNo = 1, AssignedDate = new DateTime(2023, 1, 4), LastReturnedDate = new DateTime(2023, 1, 5) },
-                new StaffAssetHistory { Id = 2, staffId = 1, AssetNo = 2, AssignedDate = new DateTime(2023, 1, 3), LastReturnedDate = new DateTime(2023, 1, 4) }
+                new StaffAssetHistory { Id = 2, staffId = 1, AssetNo = 2, AssignedDate = new DateTime(2023, 1, 3), LastReturnedDate = new DateTime(2023, 1, 4) },
+                new StaffAssetHistory { Id = 3, staffId = 2, AssetNo = 2, AssignedDate = new DateTime(2023, 1, 3), LastReturnedDate = new DateTime(2023, 1, 4) }
                 );
 
 

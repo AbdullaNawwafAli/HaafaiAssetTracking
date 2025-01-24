@@ -77,7 +77,11 @@ namespace HaafaiAssetTrackingApp.Migrations
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "AssetNo", "AssetStatus", "AssetType", "AssignedDate", "DiscardedDate", "LastReturnedDate", "PurchasedDate", "staffId" },
-                values: new object[] { 2, "Not Assigned", "CPU", null, null, new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
+                values: new object[,]
+                {
+                    { 2, "Not Assigned", "CPU", null, null, new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
+                    { 3, "Discarded", "Keyboard", null, new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
+                });
 
             migrationBuilder.InsertData(
                 table: "Staffs",
@@ -100,7 +104,8 @@ namespace HaafaiAssetTrackingApp.Migrations
                 values: new object[,]
                 {
                     { 1, 1, new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 },
-                    { 2, 2, new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 }
+                    { 2, 2, new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 3, 2, new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 2 }
                 });
 
             migrationBuilder.CreateIndex(

@@ -77,6 +77,14 @@ namespace HaafaiAssetTrackingApp.Migrations
                             AssetType = "CPU",
                             LastReturnedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PurchasedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            AssetNo = 3,
+                            AssetStatus = "Discarded",
+                            AssetType = "Keyboard",
+                            DiscardedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PurchasedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -170,6 +178,14 @@ namespace HaafaiAssetTrackingApp.Migrations
                             AssignedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LastReturnedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             staffId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AssetNo = 2,
+                            AssignedDate = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastReturnedDate = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            staffId = 2
                         });
                 });
 
